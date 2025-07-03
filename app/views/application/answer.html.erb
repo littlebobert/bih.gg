@@ -12,7 +12,6 @@
 
   <body>
 	  <div><%= @answer %></div>
-	  <div><%= link_to "Home", root_path %> | <%= link_to "Donate", "https://buymeacoffee.com/notetube" %></div>
-	  <div></div>
+	  <div><%= link_to "Home", root_path %> | <%= mail_to "justin.garcia@gmail.com", "Your ad could go here", subject: "Ad inquiry" %> | <%= link_to "Donate", "https://buymeacoffee.com/notetube" %></div>
   </body>
 </html>
