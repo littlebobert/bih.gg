@@ -11,7 +11,21 @@
   </head>
 
   <body>
-	  <div><%= @answer %></div>
-	  <div><%= link_to "Home", root_path %> | <%= mail_to "justin.garcia@gmail.com", "Your ad could go here", subject: "Ad inquiry" %> | <%= link_to "Donate", "https://buymeacoffee.com/notetube" %></div>
+	  <div id="answer"><%= @answer %></div>
+	  <div><button id="copy-button" onClick="copy();">Copy Answer</button> | <%= link_to "Home", root_path %> | <%= mail_to "justin.garcia@gmail.com", "Your ad could go here", subject: "Ad inquiry" %> | <%= link_to "Donate", "https://buymeacoffee.com/notetube" %></div>
   </body>
+  <script>
+	async function copyTextToClipboard(textToCopy) {
+		try {
+			await navigator.clipboard.writeText(textToCopy);
+			console.log('Text successfully copied to clipboard!');
+		} catch (err) {
+			console.error('Failed to copy text: ', err);
+		}
+	}
+    function copy() {
+  		copyTextToClipboard(document.getElementById('answer').innerText);
+		document.getElementById("copy-button").innerText = "Copied"
+  	}
+  </script>
 </html>
