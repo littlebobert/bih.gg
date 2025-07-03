@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
 		)
 		
 		@completion = openai.chat.completions.create(
-		  messages: [{role: "user", content: query}],
+		  messages: [{role: "system", content: "try to keep answers brief (under 1 or 2 paragraphs)."}, {role: "user", content: query}],
 		  model: :"o3-mini"
 		)
 		
