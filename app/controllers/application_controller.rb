@@ -18,8 +18,6 @@ class ApplicationController < ActionController::Base
 		  model: :"o3-mini"
 		)
 		
-		puts @completion
-		
 		if @completion && @completion.choices && @completion.choices[0] && @completion.choices[0].message && @completion.choices[0].message.content
 			@answer = @completion.choices[0].message.content
 		end
