@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
 	def answer
 		query = params[:query]
 		
-		answer = OpenAIClient.new.chat(
+		answer = OpenAiClient.new.chat(
 			[{role: "system", content: "Try to keep answers brief (under 1 or 2 paragraphs)."},
 			{role: "user", content: query}]
 		)

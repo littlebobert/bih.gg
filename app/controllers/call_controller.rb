@@ -27,14 +27,14 @@ class CallController < ActionController::Base
 		local_file_name = Rails.root.join("tmp", File.basename(URI.parse(recording_url).path + ".wav"))
 		sleep 3.0
 		file = download_audio(recording_url, local_file_name)
-		transcription = OpenAIClient.new.transcribe(file)
+		transcription = OpenAiClient.new.transcribe(file)
 		File.delete(local_file_name) if File.exist?(local_file_name)
 		prompt = """
 		#{transcription}
 		===
 		Answer with 2 sentences max.
 		"""
-		answer = OpenAIClient.new.chat(
+		answer = OpenAiClient.new.chat(
 			[
 				{ role: "user", content: prompt }
 			]

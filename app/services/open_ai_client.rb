@@ -2,7 +2,7 @@ require "net/http"
 require "json"
 require "uri"
 
-class OpenAIClient
+class OpenAiClient
   ENDPOINT = URI("https://api.openai.com/v1/responses")
   TRANSCRIPTIONS_ENDPOINT = URI("https://api.openai.com/v1/audio/transcriptions")
 
