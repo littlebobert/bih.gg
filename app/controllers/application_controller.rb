@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 	end
 	
 	def answer
-		query = params[:q]
+		query = params[:query]
 		
 		openai = OpenAI::Client.new(
 		  api_key: ENV["OPENAI_API_KEY"]
