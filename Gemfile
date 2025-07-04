@@ -64,5 +64,4 @@ end
 
 gem 'dotenv-rails', groups: [:development, :test]
 
-gem "openai", "~> 0.11.0"
-
+gem 'redcarpet'
