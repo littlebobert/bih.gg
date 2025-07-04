@@ -7,5 +7,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "application#home"
-  get "/answer", to: "application#answer"
+  post "/answer", to: "application#answer", as: "answer"
 end
