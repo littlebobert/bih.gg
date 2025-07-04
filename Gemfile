@@ -65,3 +65,5 @@ end
 gem 'dotenv-rails', groups: [:development, :test]
 
 gem 'redcarpet'
+
+gem 'twilio-ruby'

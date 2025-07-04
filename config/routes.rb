@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "application#home"
   post "/answer", to: "application#answer", as: "answer"
+  get "/answer-call", to: "call#index"
+  post "/answer-call", to: "call#answer_query"
 end
